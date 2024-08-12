@@ -102,7 +102,7 @@
 
 <script>
     const showAnswers = async (question) => {
-        await axios.get(`http://localhost:3333/answers/question/${question}`)
+        await axios.get(`https://sbpmb-express.amisbudi.cloud/answers/question/${question}`)
             .then((response) => {
                 let message = '';
                 const answers = response.data;
@@ -138,7 +138,7 @@
 </script>
 
 <script>
-    var urlData = `http://localhost:3333/questions`;
+    var urlData = `https://sbpmb-express.amisbudi.cloud/questions`;
     var dataTableInitialized = false;
     var dataTableInstance;
 
@@ -205,7 +205,7 @@
     const deleteRecord = async (id) => {
         const confirmation = confirm('Apakah anda yakin untuk menghapus pertanyaan ini?');
         if (confirmation) {
-            await axios.delete(`http://localhost:3333/questions/${id}`)
+            await axios.delete(`https://sbpmb-express.amisbudi.cloud/questions/${id}`)
                 .then((response) => {
                     getDataTable();
                 })

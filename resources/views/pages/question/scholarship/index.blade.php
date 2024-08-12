@@ -186,8 +186,8 @@
                 return new Promise(async (resolve, reject) => {
                     try {
                         const [responseHistories, responseCategories] = await Promise.all([
-                            axios.get(`http://localhost:3333/histories`),
-                            axios.get(`http://localhost:3333/categories`)
+                            axios.get(`https://sbpmb-express.amisbudi.cloud/histories`),
+                            axios.get(`https://sbpmb-express.amisbudi.cloud/categories`)
                         ]);
 
                         const responseApplicants = await axios.get(url);
@@ -327,9 +327,9 @@
                 try {
                     const [responseRecords, responseQuestions] = await Promise.all([
                         axios.get(
-                            `http://localhost:3333/records?identity_user=${history.identity_user}&category=${history.category_id}`
+                            `https://sbpmb-express.amisbudi.cloud/records?identity_user=${history.identity_user}&category=${history.category_id}`
                         ),
-                        axios.get(`http://localhost:3333/questions?category=${history.category_id}`)
+                        axios.get(`https://sbpmb-express.amisbudi.cloud/questions?category=${history.category_id}`)
                     ]);
 
                     let identity = history.identity_user;

@@ -43,7 +43,7 @@
         e.preventDefault();
         const categoryInput = e.target.elements.category;
         if (categoryInput.value) {
-            await axios.post(`http://localhost:3333/categories`, {
+            await axios.post(`https://sbpmb-express.amisbudi.cloud/categories`, {
                     name: categoryInput.value,
                 })
                 .then((response) => {
